@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hr_management/common/app_colors.dart';
 
 class NotificationCardWidget extends StatelessWidget {
+  const NotificationCardWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           color: AppColor.yellow, borderRadius: BorderRadius.circular(20)),
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Row(
         children: [
           Column(
@@ -17,7 +19,7 @@ class NotificationCardWidget extends StatelessWidget {
               Text.rich(
                 TextSpan(
                   style: TextStyle(fontSize: 16, color: AppColor.black),
-                  children: [
+                  children: const [
                     TextSpan(text: "Good Morning "),
                     TextSpan(
                       text: "Ravi Patel!",
@@ -28,7 +30,7 @@ class NotificationCardWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
@@ -39,7 +41,7 @@ class NotificationCardWidget extends StatelessWidget {
                   height: 1.5,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
@@ -53,7 +55,7 @@ class NotificationCardWidget extends StatelessWidget {
             ],
           ),
           if (MediaQuery.of(context).size.width >= 620) ...{
-            Spacer(),
+            const Spacer(),
             Image.asset(
               "assets/notification_image.png",
               height: 160,

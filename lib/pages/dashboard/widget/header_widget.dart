@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hr_management/common/app_colors.dart';
 import 'package:flutter_hr_management/common/app_responsive.dart';
-import 'package:flutter_hr_management/controllers/menu_controller.dart';
+import 'package:flutter_hr_management/controllers/menu_app_controller.dart';
 import 'package:provider/provider.dart';
 
 class HeaderWidget extends StatefulWidget {
+  const HeaderWidget({super.key});
+
   @override
-  _HeaderWidgetState createState() => _HeaderWidgetState();
+  HeaderWidgetState createState() => HeaderWidgetState();
 }
 
-class _HeaderWidgetState extends State<HeaderWidget> {
+class HeaderWidgetState extends State<HeaderWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: Row(
         children: [
           if (!AppResponsive.isDesktop(context))
@@ -22,10 +24,10 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                 Icons.menu,
                 color: AppColor.black,
               ),
-              onPressed: Provider.of<MenuController>(context, listen: false)
+              onPressed: Provider.of<MenuAppController>(context, listen: false)
                   .controlMenu,
             ),
-          Text(
+          const Text(
             "Dashboard",
             style: TextStyle(
               fontSize: 30,
@@ -33,7 +35,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
             ),
           ),
           if (!AppResponsive.isMobile(context)) ...{
-            Spacer(),
+            const Spacer(),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
