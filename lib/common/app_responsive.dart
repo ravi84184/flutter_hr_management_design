@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class AppResponsive extends StatelessWidget {
   final Widget mobile;
-  final Widget tablet;
-  final Widget desktop;
+  final Widget? tablet;
+  final Widget? desktop;
 
   const AppResponsive(
-      {Key key, @required this.mobile, this.tablet, @required this.desktop})
+      {Key? key, required this.mobile, this.tablet, @required this.desktop})
       : super(key: key);
 
   /// This size work for my design, maybe you need some changes depend on your design
@@ -19,16 +19,12 @@ class AppResponsive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size _size = MediaQuery.of(context).size;
-
     if (isDesktop(context)) {
-      return desktop;
+      return desktop!;
     } else if (isTablet(context) && tablet != null) {
-      return tablet;
+      return tablet!;
     } else {
       return mobile;
     }
-
-    return Container();
   }
 }

@@ -3,17 +3,19 @@ import 'package:flutter_hr_management/common/app_colors.dart';
 import 'package:flutter_hr_management/common/app_responsive.dart';
 
 class RecruitmentDataWidget extends StatefulWidget {
+  const RecruitmentDataWidget({super.key});
+
   @override
-  _RecruitmentDataWidgetState createState() => _RecruitmentDataWidgetState();
+  RecruitmentDataWidgetState createState() => RecruitmentDataWidgetState();
 }
 
-class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
+class RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           color: AppColor.white, borderRadius: BorderRadius.circular(20)),
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Column(
         children: [
           Row(
@@ -31,7 +33,7 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
                 decoration: BoxDecoration(
                     color: AppColor.yellow,
                     borderRadius: BorderRadius.circular(100)),
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 10,
                   horizontal: 20,
                 ),
@@ -43,7 +45,7 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
               )
             ],
           ),
-          Divider(
+          const Divider(
             thickness: 0.5,
             color: Colors.grey,
           ),
@@ -52,7 +54,7 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
             children: [
               /// Table Header
               TableRow(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   border: Border(
                       bottom: BorderSide(
                     color: Colors.grey,
@@ -104,10 +106,10 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
             ],
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10),
+            margin: const EdgeInsets.symmetric(vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Text("Showing 4 out of 4 Results"),
                 Text(
                   "View All",
@@ -123,7 +125,7 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
 
   TableRow tableRow(context, {name, image, designation, status, color}) {
     return TableRow(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           border: Border(
             bottom: BorderSide(
               color: Colors.grey,
@@ -134,7 +136,7 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
         children: [
           //Full Name
           Container(
-            margin: EdgeInsets.symmetric(vertical: 15),
+            margin: const EdgeInsets.symmetric(vertical: 15),
             child: Row(
               children: [
                 ClipRRect(
@@ -144,7 +146,7 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
                     width: 30,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Text(name)
@@ -164,7 +166,7 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
                 height: 10,
                 width: 10,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Text(status),
@@ -182,7 +184,7 @@ class _RecruitmentDataWidgetState extends State<RecruitmentDataWidget> {
 
   Widget tableHeader(text) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 15),
+      margin: const EdgeInsets.symmetric(vertical: 15),
       child: Text(
         text,
         style: TextStyle(fontWeight: FontWeight.bold, color: AppColor.black),

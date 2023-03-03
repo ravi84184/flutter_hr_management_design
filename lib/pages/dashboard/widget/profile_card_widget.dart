@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hr_management/common/app_colors.dart';
 
 class ProfileCardWidget extends StatelessWidget {
+  const ProfileCardWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -9,7 +11,7 @@ class ProfileCardWidget extends StatelessWidget {
         color: AppColor.white,
         borderRadius: BorderRadius.circular(10),
       ),
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Column(
         children: [
           Row(
@@ -22,9 +24,9 @@ class ProfileCardWidget extends StatelessWidget {
                   width: 60,
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Column(
-                children: [
+                children: const [
                   Text(
                     "Kathy Walker",
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -34,7 +36,7 @@ class ProfileCardWidget extends StatelessWidget {
               )
             ],
           ),
-          Divider(
+          const Divider(
             thickness: 0.5,
             color: Colors.grey,
           ),
@@ -48,7 +50,7 @@ class ProfileCardWidget extends StatelessWidget {
 
   Widget profileListTile(text, value) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8),
+      margin: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

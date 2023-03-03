@@ -9,16 +9,18 @@ import 'widget/profile_card_widget.dart';
 import 'widget/recruitment_data_widget.dart';
 
 class Dashboard extends StatefulWidget {
+  const Dashboard({super.key});
+
   @override
-  _DashboardState createState() => _DashboardState();
+  DashboardState createState() => DashboardState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: AppColor.bgColor,
         borderRadius: BorderRadius.circular(30),
@@ -26,7 +28,7 @@ class _DashboardState extends State<Dashboard> {
       child: Column(
         children: [
           /// Header Part
-          HeaderWidget(),
+          const HeaderWidget(),
           Expanded(
             child: SingleChildScrollView(
               child: Row(
@@ -34,30 +36,28 @@ class _DashboardState extends State<Dashboard> {
                 children: [
                   Expanded(
                     flex: 2,
-                    child: Container(
-                      child: Column(
-                        children: [
-                          NotificationCardWidget(),
-                          SizedBox(
+                    child: Column(
+                      children: [
+                        const NotificationCardWidget(),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        if (AppResponsive.isMobile(context)) ...{
+                          const CalendarWidget(),
+                          const SizedBox(
                             height: 20,
                           ),
-                          if (AppResponsive.isMobile(context)) ...{
-                            CalendarWidget(),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          },
-                          RecruitmentDataWidget(),
-                        ],
-                      ),
+                        },
+                        const RecruitmentDataWidget(),
+                      ],
                     ),
                   ),
                   if (!AppResponsive.isMobile(context))
                     Expanded(
                       child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
                         child: Column(
-                          children: [
+                          children: const [
                             CalendarWidget(),
                             SizedBox(
                               height: 20,

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hr_management/common/app_colors.dart';
 
 class SideBar extends StatefulWidget {
+  const SideBar({super.key});
+
   @override
-  _SideBarState createState() => _SideBarState();
+  SideBarState createState() => SideBarState();
 }
 
-class _SideBarState extends State<SideBar> {
+class SideBarState extends State<SideBar> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -17,7 +19,7 @@ class _SideBarState extends State<SideBar> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Text(
                 "MATRIX HR",
                 style: TextStyle(
@@ -57,7 +59,7 @@ class _SideBarState extends State<SideBar> {
               icon: "assets/menu_settings.png",
               press: () {},
             ),
-            Spacer(),
+            const Spacer(),
             Image.asset("assets/sidebar_image.png")
           ],
         ),
@@ -67,10 +69,10 @@ class _SideBarState extends State<SideBar> {
 }
 
 class DrawerListTile extends StatelessWidget {
-  final String title, icon;
-  final VoidCallback press;
+  final String? title, icon;
+  final VoidCallback? press;
 
-  const DrawerListTile({Key key, this.title, this.icon, this.press})
+  const DrawerListTile({Key? key, this.title, this.icon, this.press})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -78,12 +80,12 @@ class DrawerListTile extends StatelessWidget {
       onTap: press,
       horizontalTitleGap: 0.0,
       leading: Image.asset(
-        icon,
+        icon!,
         color: AppColor.white,
         height: 16,
       ),
       title: Text(
-        title,
+        title!,
         style: TextStyle(color: AppColor.white),
       ),
     );
